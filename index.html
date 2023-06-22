@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calcul du prix TTC</title>
+    <script>
+      function calculerPrixTTC() {
+        var prixHT = parseFloat(document.getElementById("prixHT").value);
+        var tauxTVA = parseFloat(document.getElementById("tauxTVA").value);
+        var prixTTC = prixHT * (1 + tauxTVA / 100);
+        document.getElementById("resultat").innerHTML =
+          "Le prix TTC est : " + prixTTC.toFixed(2);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Calcul du prix TTC</h1>
+    <label for="prixHT">Prix HT:</label>
+    <input type="number" id="prixHT" />
+    <br />
+    <label for="tauxTVA">Taux TVA (%):</label>
+    <input type="number" id="tauxTVA" />
+    <br />
+    <button onclick="calculerPrixTTC()">Calculer le prix TTC</button>
+    <br />
+    <div id="resultat"></div>
+  </body>
+</html>
